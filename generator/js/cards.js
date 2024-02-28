@@ -427,10 +427,35 @@ function card_element_empty(params, card_data, options) {
     return '';
 }
 
+function card_element_start_table() {
+    return '<div><table>';
+}
+
+function card_element_end_table() {
+    return '</table></div>';
+}
+
+function card_element_table_header() {
+    var size = options.size || 3; // Default size if not specified
+    var style = 'style="font-size:' + size + 'em;"'; // Apply the size to font-size for simplicity
+    var element_class = options.element_class || "custom-header-class"; // Use a default class if not specified
+
+    var result = '<tr>';
+    for (var i = 0; i < params.length; i++) {
+        result += '<th class="' + element_class + '" ' + style + '>' + params[i] + '</th>';
+    }
+    result += '</tr>';
+    return result;
+}
+
+
 var card_element_generators = {
     subtitle: card_element_subtitle,
     property: card_element_property,
     rule: card_element_ruler,
+    table_start:card_element_start_table,
+    table_header:card_element_table_header,
+    table_end:card_element_end_table,
     ruler: card_element_ruler,
     p2e_rule: card_element_p2e_ruler,
     p2e_ruler: card_element_p2e_ruler,

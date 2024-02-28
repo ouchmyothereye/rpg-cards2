@@ -6,6 +6,7 @@
     flex-direction: column;
     font-family: 'Noto Sans', 'Myriad Pro', Calibri, Helvetica, Arial, sans-serif;
     font-size: 8pt;
+    margin: 1mm;
     overflow: hidden;
 }
 
