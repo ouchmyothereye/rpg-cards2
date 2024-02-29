@@ -4,7 +4,7 @@
     position: relative;
     display: flex;
     flex-direction: column;
-    font-family: 'Noto Sans', 'Myriad Pro', Calibri, Helvetica, Arial, sans-serif;
+    font-family: 'Acrom-Regular','Noto Sans', 'Myriad Pro', Calibri, Helvetica, Arial, sans-serif;
     font-size: 8pt;
     margin: 1mm;
     overflow: hidden;
@@ -100,7 +100,7 @@
 .card-title {
     height: 8mm;
     padding-left: 2mm;
-    font-family: Lora, 'Calisto MT', 'Bookman Old Style', Bookman, 'Goudy Old Style', Garamond, 'Hoefler Text', 'Bitstream Charter', Georgia, serif;
+    font-family: 'Acrom-Bold',Lora, 'Calisto MT', 'Bookman Old Style', Bookman, 'Goudy Old Style', Garamond, 'Hoefler Text', 'Bitstream Charter', Georgia, serif;
     font-variant: small-caps;
     font-weight: bold;
     background-color: inherit;
@@ -133,6 +133,12 @@
 .card-title-10 {
     font-size: 10pt;
     line-height: 7.5mm;
+    letter-spacing: -1px;
+}
+.card-title-9 {
+    font-size: 9pt;
+    line-height: 7.5mm;
+    letter-spacing: -1px;
 }
 .card-font-size-12 {
     font-size: 12px;
@@ -161,7 +167,7 @@
 .card-subtitle {
     margin-bottom: 0.0em;
     line-height: 18px;
-    font-family: 'Noto Sans', 'Myriad Pro', Calibri, Helvetica, Arial, sans-serif;
+    font-family: 'Acrom-Bold','Noto Sans', 'Myriad Pro', Calibri, Helvetica, Arial, sans-serif;
     font-size: 10pt;
     font-style: italic;
 }
@@ -262,13 +268,42 @@
     margin-right: 0.3em;
 }
 
-.card-stats {
-    width: 100%
+/* CUSTOM STYLING START
+} */
+.card-stats-custom {
+    width: 100%;
+    border-bottom: 1px solid #ddd
 }
+
+.card-stats-header-custom {
+    text-align: center;
+    padding: 0;
+    width: 16.6%;
+}
+
+.card-stats-cell-custom {
+    text-align: center;
+    padding: 0;
+}
+
+.card-stats-cell-custom2  {
+    text-align: center;
+    padding: 0;
+}
+
+.card-stats-cell-custom2:nth-child(even)  {
+    background-color: #d59139;
+}
+/* CUSTOM STYLING END
+} */
+
 .card-stats-sw-derived {
     margin-top: 0;
     margin-bottom: 0;
 }
+
+
+
 
 .card-stats-header {
     text-align: center;
