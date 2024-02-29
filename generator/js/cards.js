@@ -356,38 +356,66 @@ function card_element_p2e_activity(params, card_data, options) {
 
 
 function card_element_swstats(params, card_data, options) {
-    var stats = [];
-    for (var i = 0; i < 9; ++i) {
-        stats[i] = params[i] || '-';
-    }
     var card_font_size_class = card_size_class(card_data, options);
 
     var result = "";
-    result += '<table class="card-stats' + card_font_size_class + '">';
-    result += '    <tbody><tr>';
-    result += '      <th class="card-stats-header">Agility</th>';
-    result += '      <th class="card-stats-header">Smarts</th>';
-    result += '      <th class="card-stats-header">Spirit</th>';
-    result += '      <th class="card-stats-header">Strength</th>';
-    result += '      <th class="card-stats-header">Vigor</th>';
-    result += '    </tr>';
-    result += '    <tr>';
-    result += '      <td class="card-stats-cell">d' + stats[0] + '</td>';
-    result += '      <td class="card-stats-cell">d' + stats[1] + '</td>';
-    result += '      <td class="card-stats-cell">d' + stats[2] + '</td>';
-    result += '      <td class="card-stats-cell">d' + stats[3] + '</td>';
-    result += '      <td class="card-stats-cell">d' + stats[4] + '</td>';
-    result += '    </tr>';
-    result += '  </tbody>';
+    result += '<table class="card-stats-custom' + card_font_size_class + '">';
+    result += '    <tbody>';
+    result += '      <tr class="card-stats-cell-custom2"><th class="card-stats-header-custom" colspan="2">Reincarnate Races</th></tr>';
+    result += '      <tr class="card-stats-cell-custom2"><td class="card-stats-cell-custom">01-04</td><td class="card-stats-cell">Dragonborn</td></tr>';
+    result += '      <tr class="card-stats-cell-custom2"><td class="card-stats-cell-custom">05-13</td><td class="card-stats-cell">Dwarf, hill</td></tr>';
+    result += '      <tr class="card-stats-cell-custom2"><td class="card-stats-cell-custom">14-21</td><td class="card-stats-cell">Dwarf, mountain</td></tr>';
+    result += '      <tr class="card-stats-cell-custom2"><td class="card-stats-cell-custom">22-25</td><td class="card-stats-cell">Elf, dark</td></tr>';
+    result += '      <tr class="card-stats-cell-custom2"><td class="card-stats-cell-custom">26-34</td><td class="card-stats-cell">Elf, high</td></tr>';
+    result += '      <tr class="card-stats-cell-custom2"><td class="card-stats-cell-custom">35-42</td><td class="card-stats-cell">Elf, wood</td></tr>';
+    result += '      <tr class="card-stats-cell-custom2"><td class="card-stats-cell-custom">43-46</td><td class="card-stats-cell">Gnome, forest</td></tr>';
+    result += '      <tr class="card-stats-cell-custom2"><td class="card-stats-cell-custom">47-52</td><td class="card-stats-cell">Gnome, rock</td></tr>';
+    result += '      <tr class="card-stats-cell-custom2"><td class="card-stats-cell-custom">53-56</td><td class="card-stats-cell">Half-elf</td></tr>';
+    result += '      <tr class="card-stats-cell-custom2"><td class="card-stats-cell-custom">57-60</td><td class="card-stats-cell">Half-orc</td></tr>';
+    result += '      <tr class="card-stats-cell-custom2"><td class="card-stats-cell-custom">61-68</td><td class="card-stats-cell">Halfling, lightfoot</td></tr>';
+    result += '      <tr class="card-stats-cell-custom2"><td class="card-stats-cell-custom">69-76</td><td class="card-stats-cell">Halfling, stout</td></tr>';
+    result += '      <tr class="card-stats-cell-custom2"><td class="card-stats-cell-custom">77-96</td><td class="card-stats-cell">Human</td></tr>';
+    result += '      <tr class="card-stats-cell-custom2"><td class="card-stats-cell-custom">97-00</td><td class="card-stats-cell">Tiefling</td></tr>';
+    result += '    </tbody>';
     result += '</table>';
-    result += '<p class="card-stats-sw-derived">';
-    result += ' <b>Pace</b> ' + stats[5];
-    result += ' <b>Parry</b> ' + stats[6];
-    result += ' <b>Toughness</b> ' + stats[7];
-    result += stats[8] ? ' <b>Loot</b> ' + stats[8] : '';
-    result += '</p>';
     return result;
+
+    
 }
+
+function card_element_controlweather(params, card_data, options) {
+    var card_font_size_class = card_size_class(card_data, options);
+
+    var result = "";
+    result += '<table class="card-stats-custom' + card_font_size_class + '">';
+    result += '<caption><b>Precipitation</b></caption><tbody>';
+    result += '<tr class="card-stats-cell-custom2"><th class="card-stats-header-custom"><i>Stage</i></th> <th class="card-stats-header-custom"><i>Condition</i></th></tr>';
+    result += '<tr class="card-stats-cell-custom2"><td class="card-stats-cell-custom">1</td> <td class="card-stats-cell-custom">Clear</td></tr>';
+    result += '<tr class="card-stats-cell-custom2"><td class="card-stats-cell-custom">2</td> <td class="card-stats-cell-custom">Light clouds</td></tr>';
+    result += '<tr class="card-stats-cell-custom2"><td class="card-stats-cell-custom">3</td> <td class="card-stats-cell-custom">Overcast or ground fog</td></tr>';
+    result += '<tr class="card-stats-cell-custom2"><td class="card-stats-cell-custom">4</td> <td class="card-stats-cell-custom">Rain, hail, or snow</td></tr>';
+    result += '<tr class="card-stats-cell-custom2"><td class="card-stats-cell-custom">5</td> <td class="card-stats-cell-custom"> Torrential rain, driving hail, or blizzard</td></tr>';
+    result += '    </tbody>';    result += '</table>';
+    result += '<table class="card-stats-custom' + card_font_size_class + '">';
+    result += '<caption><b>Temperature</b></caption><tbody>';
+    result += '<tr class="card-stats-cell-custom2"><th class="card-stats-header-custom"><i>Stage</i></th> <th class="card-stats-header-custom"><i>Condition</i></th></tr>';
+    result += '<tr class="card-stats-cell-custom2"><td class="card-stats-cell-custom">1</td> <td class="card-stats-cell-custom">Unbearable heat</td></tr>';
+    result += '<tr class="card-stats-cell-custom2"><td class="card-stats-cell-custom">2</td> <td class="card-stats-cell-custom">Hot</td></tr>';
+    result += '<tr class="card-stats-cell-custom2"><td class="card-stats-cell-custom">3</td> <td class="card-stats-cell-custom">Warm</td></tr>';
+    result += '<tr class="card-stats-cell-custom2"><td class="card-stats-cell-custom">4</td> <td class="card-stats-cell-custom">Cool</td></tr>';
+    result += '<tr class="card-stats-cell-custom2"><td class="card-stats-cell-custom">5</td> <td class="card-stats-cell-custom">Cold</td></tr>';
+    result += '<tr class="card-stats-cell-custom2"><td class="card-stats-cell-custom">6</td> <td class="card-stats-cell-custom">Arctic cold</td></tr>';
+    result += '    </tbody>';    result += '</table>';   
+    result += '<table class="card-stats-custom' + card_font_size_class + '">';
+    result += ' <caption><b>Wind</b></caption><tbody>';
+    result += '<tr class="card-stats-cell-custom2"><th class="card-stats-header-custom"><i>Stage</i></th> <th class="card-stats-header-custom"<i>Condition</i></th></tr>';
+    result += '<tr class="card-stats-cell-custom2"><td class="card-stats-cell-custom">1</td> <td class="card-stats-cell-custom">Calm</td></tr>';
+    result += '<tr class="card-stats-cell-custom2"><td class="card-stats-cell-custom">2</td> <td class="card-stats-cell-custom">Moderate wind</td></tr>';
+    result += '<tr class="card-stats-cell-custom2"><td class="card-stats-cell-custom">3</td> <td class="card-stats-cell-custom">Strong wind</td></tr>';
+    result += '<tr class="card-stats-cell-custom2"><td class="card-stats-cell-custom">4</td> <td class="card-stats-cell-custom">Gale</td></tr>';
+    result += '<tr class="card-stats-cell-custom2"><td class="card-stats-cell-custom">5</td> <td class="card-stats-cell-custom">Storm</td></tr>';
+    result += '    </tbody>';    result += '</table>';
+    return result;}
 
 function card_element_bullet(params, card_data, options) {
     var card_font_size_class = card_size_class(card_data, options);
@@ -436,15 +464,8 @@ function card_element_end_table() {
 }
 
 function card_element_table_header() {
-    var size = options.size || 3; // Default size if not specified
-    var style = 'style="font-size:' + size + 'em;"'; // Apply the size to font-size for simplicity
-    var element_class = options.element_class || "custom-header-class"; // Use a default class if not specified
-
-    var result = '<tr>';
-    for (var i = 0; i < params.length; i++) {
-        result += '<th class="' + element_class + '" ' + style + '>' + params[i] + '</th>';
-    }
-    result += '</tr>';
+    var result = ""
+    var result = '<tr><th>test</th> <th>test</th> <th>test</th></tr>';
     return result;
 }
 
@@ -456,6 +477,7 @@ var card_element_generators = {
     table_start:card_element_start_table,
     table_header:card_element_table_header,
     table_end:card_element_end_table,
+    controlweather: card_element_controlweather,
     ruler: card_element_ruler,
     p2e_rule: card_element_p2e_ruler,
     p2e_ruler: card_element_p2e_ruler,
